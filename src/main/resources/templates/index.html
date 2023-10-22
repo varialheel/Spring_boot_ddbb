@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div th:if="${cities != null and !cities.empty}">
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Country code</th>
+                <th>District</th>
+                <th>Population</th>
+            </tr>
+            <tr th:each="city : ${cities}">
+                <td th:text="${city.ID}"></td>
+                <td th:text="${city.Name}"></td>
+                <!-- <td th:text="${city.CountryCode}"></td> -->
+                <td th:text="${city.District}"></td>
+                <td th:text="${city.Population}"></td>
+            </tr>
+        </table>
+    </div>
+    <div th:if="${cities == null or cities.empty}">
+        <p>La lista esta vacía</p>
+    </div>
+</body>
+</html>

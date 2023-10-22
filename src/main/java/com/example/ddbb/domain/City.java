@@ -13,11 +13,10 @@ public class City implements Serializable{
     private static final long serialVersionUID = 1L;
 
     @Id
-    //
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer ID;
     private String Name;
-    private String CountryCode;
+    private String Countrycode;
     private String District;
     private Integer Population;
 }
