@@ -16,7 +16,7 @@ public class City implements Serializable{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer ID;
     private String Name;
-    private String Countrycode;
+    private String Country_code;
     private String District;
     private Integer Population;
 }
