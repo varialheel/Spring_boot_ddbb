@@ -31,8 +31,8 @@ public class CityServiceImpl implements CityService {
 
     @Transactional
     @Override
-    public void delete(City city) {
-        cityDao.delete(city);
+    public void delete(Long id) {
+        cityDao.deleteById(id);
     }
 
     @Transactional(readOnly = true)

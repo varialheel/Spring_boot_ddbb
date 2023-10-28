@@ -19,4 +19,25 @@ public class City implements Serializable{
     private String Country_code;
     private String District;
     private Integer Population;
+
+    public Integer getID() {
+        return this.ID;
+    }
+
+    public String getName() {
+        return this.Name;
+    }
+
+    public String getCountryCode() {
+        return this.Country_code;
+    }
+
+    public String getDistrict() {
+        return this.District;
+    }
+
+    public Integer getPopulation() {
+        return this.Population;
+    }
+
 }

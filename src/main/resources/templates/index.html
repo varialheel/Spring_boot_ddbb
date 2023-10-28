@@ -6,6 +6,9 @@
     <title>Document</title>
 </head>
 <body>
+    <div>
+        <a th:href="@{/addCityForm}">Añadir</a>
+    </div>
     <div th:if="${cities != null and !cities.empty}">
         <table>
             <tr>
@@ -16,11 +19,13 @@
                 <th>Population</th>
             </tr>
             <tr th:each="city : ${cities}">
-                <td th:text="${city.ID}"></td>
-                <td th:text="${city.Name}"></td>
-                <td th:text="${city.Country_code}"></td> 
-                <td th:text="${city.District}"></td>
-                <td th:text="${city.Population}"></td>
+                <td th:text="${city.getID()}"></td>
+                <td th:text="${city.getName()}"></td>
+                <td th:text="${city.getCountryCode()}"></td> 
+                <td th:text="${city.getDistrict()}"></td>
+                <td th:text="${city.getPopulation()}"></td>
+                <td><a th:href="@{/updateCityForm/} + ${city.getID()}" th:text="Modificar"></a></td>
+                <td><a th:href="@{/deleteCity/} + ${city.getID()}" th:text="Borrar"></a></td>
             </tr>
         </table>
     </div>

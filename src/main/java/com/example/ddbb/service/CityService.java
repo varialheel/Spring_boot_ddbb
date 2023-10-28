@@ -11,7 +11,7 @@ public interface CityService {
 
     public void save(City city);
 
-    public void delete(City city);
+    public void delete(Long id);
 
     public Optional<City> getCity(Long id);
 

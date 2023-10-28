@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+xmlns="https://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <a th:href="@{/}">Volver</a>
+    </div>
+    <div th:if="${countries != null and !countries.empty}">
+        <form th:action="@{/addCity}" method="post" th:object="${city}">
+            <div>
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name">
+            </div>
+            <div>
+                <label for="country_code">Country code</label>
+                <select name="country_code" id="country_code">
+                    <option th:each="country : ${countries}" th:value="${country.getCode()}" th:text="${country.getName()}"></option>
+                </select>
+            </div>
+            <div>
+                <label for="district">District</label>
+                <input type="text" name="district" id="district">
+            </div>
+            <div>
+                <label for="population">Population</label>
+                <input type="number" name="population" id="population">
+            </div>
+            <button type="submit">Aceptar</button>
+        </form>
+    </div>
+    <div th:if="${countries == null or countries.empty}">
+        <p>La lista de paises esta vacía</p>
+    </div>
+</body>
+</html>
